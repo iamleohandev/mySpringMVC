@@ -12,18 +12,13 @@ import com.leo.han.beans.Actor;
 import com.leo.han.service.ActorService;
 
 @Controller
-public class BasicController {
+public class ActorController {
 	
 	@Autowired
 	private ActorService service;
 	
-	@RequestMapping(value="/", method = RequestMethod.GET)
-	public String goHome(){
-		
-		return "home";
-	}
 	
-	@RequestMapping(value="/details", method =RequestMethod.GET )
+	@RequestMapping(value="/actors", method =RequestMethod.GET )
 	public String showDetails(Model model){
 		
 		
@@ -32,7 +27,26 @@ public class BasicController {
 		model.addAttribute("actors", actors);
 		model.addAttribute("title", "Show all actors");
 		
-		return "details";
+		return "actors";
 	}
+	
+	
+	@RequestMapping(value="/addactor", method =RequestMethod.GET )
+	public String addActor(){
+		
+		return "addactor";
+	}
+	
+	@RequestMapping(value="/addactorresult", method =RequestMethod.POST )
+	public String addActorResult(Model model, Actor actor){
+		
+		service.addActor(actor);
+		
+		model.addAttribute("actor", actor);
+		
+		return "addactorresult";
+	}
+	
+	
 
 }

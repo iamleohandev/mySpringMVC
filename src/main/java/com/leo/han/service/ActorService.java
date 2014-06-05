@@ -1,5 +1,7 @@
 package com.leo.han.service;
 
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +40,8 @@ public class ActorService {
 	
 	
 	public void addActor(Actor actor){
+		
+		actor.setLast_update(new Timestamp((new Date()).getTime()));
 		
 		actorDao.createActor(actor);
 	}
