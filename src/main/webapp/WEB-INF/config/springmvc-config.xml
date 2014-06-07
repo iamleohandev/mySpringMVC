@@ -10,6 +10,9 @@
 	<context:component-scan base-package="com.leo.han"></context:component-scan>
 	<mvc:annotation-driven></mvc:annotation-driven>
 
+
+	<!--***specifying where to find the speicific jsp or view implementation 
+		based on the logic view name***-->
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->
 	<bean id="viewResolver"
@@ -22,16 +25,41 @@
 		up static resources in the ${webappRoot}/resources directory -->
 	<mvc:resources location="/resources/" mapping="/resources/**" />
 
-<!-- 
-use messageSource bean to read the localized data from resource bundles.
- -->
+
+
+
+
+	<!-- ************************Configuration for locale in Spring************************************************************* -->
+
+	<!--***specifying where are stored messages*** -->
+	<!-- ResourceBundleMessageSource read the properties resources for future 
+		use use Set the messageSource bean to read the localized data from resource 
+		bundles. -->
 	<bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-		<property name="basename" value="classpath:message" />
+		<property name="basename" value="classpath:i18n/message" />
 		<property name="defaultEncoding" value="UTF-8" />
 	</bean>
 
+	<!--***specifying where to find and store current locale*** -->
+	<!-- LocaleResolver maintains user sessions in the client request so that 
+		further requests can easily recognize the user locale. -->
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+		<property name="defaultLocale" value="en"></property>
+	</bean>
 
-
-
+	<!--***specifying the interceptor responsible to change the current locale 
+		based on the presence of a particular parameter *** -->
+	<!-- LocaleInterceptor interceptor is configured to intercept the user request 
+		and identify the user locale. The parameter name is configurable and we are 
+		using request parameter name for locale as “locale”. Without this interceptor, 
+		we won’t be able to change the user locale and send the response based on 
+		the new locale settings of the user. It needs to be part of interceptors 
+		element otherwise Spring won’t configure it as an interceptor. -->
+	<mvc:interceptors>
+		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+			<property name="paramName" value="language"></property>
+		</bean>
+	</mvc:interceptors>
 </beans>

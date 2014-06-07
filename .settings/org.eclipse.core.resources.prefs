@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//src/main/resources/i18n/message_en.properties=UTF-8
+encoding//src/main/resources/i18n/message_zh_CN.properties=UTF-8
+encoding//src/main/webapp/WEB-INF/jsps/actors.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsps/addactor.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsps/addactorresult.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsps/home.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsps/include.jsp=UTF-8
+encoding/<project>=UTF-8
