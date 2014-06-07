@@ -2,6 +2,7 @@ package com.leo.han.beans;
 
 import java.sql.Timestamp;
 
+
 public class Actor {
 
 	public Actor() {
@@ -23,7 +24,9 @@ public class Actor {
 	}
 
 	private Integer actor_id;
+	
 	private String first_name;
+	
 	private String last_name;
 	private Timestamp last_update;
 

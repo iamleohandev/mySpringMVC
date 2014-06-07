@@ -5,17 +5,22 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.leo.han.beans.Actor;
 import com.leo.han.service.ActorService;
+import com.leo.han.validator.ActorValidator;
 
 @Controller
 public class ActorController {
 	
 	@Autowired
 	private ActorService service;
+	
+	@Autowired
+	private ActorValidator actorValidator;
 	
 	
 	@RequestMapping(value="/actors", method =RequestMethod.GET )
@@ -32,17 +37,25 @@ public class ActorController {
 	
 	
 	@RequestMapping(value="/addactor", method =RequestMethod.GET )
-	public String addActor(){
+	public String addActor(Model model){
+		
+		model.addAttribute("actor", new Actor());
 		
 		return "addactor";
 	}
 	
 	@RequestMapping(value="/addactorresult", method =RequestMethod.POST )
-	public String addActorResult(Model model, Actor actor){
+	public String addActorResult(Model model, Actor actor,  BindingResult bindingResult){
 		
-		service.addActor(actor);
+		actorValidator.validate(actor, bindingResult);
 		
-		model.addAttribute("actor", actor);
+		
+		if(bindingResult.hasErrors()){
+			
+			return "addactor";
+			
+		}
+//		service.addActor(actor);
 		
 		return "addactorresult";
 	}
