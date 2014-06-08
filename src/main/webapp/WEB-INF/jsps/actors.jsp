@@ -1,9 +1,6 @@
-<%@include file="include.jsp" %>
+<%@include file="include.jsp"%>
 
-
-<title>Actors</title>
-</head>
-<body>
+<div class="body">
 
 	<h2>
 		<c:out value="${title}"></c:out>
@@ -27,5 +24,7 @@
 		</c:forEach>
 	</table>
 
-</body>
-</html>
+
+</div>
+
+

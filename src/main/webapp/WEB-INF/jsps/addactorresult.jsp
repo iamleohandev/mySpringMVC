@@ -1,10 +1,7 @@
 <%@include file="include.jsp" %>
 
-<title>Add Actor Result</title>
-</head>
-<body>
 
-added
 
-</body>
-</html>
+        <div class="body">
+            <h2>Actor added !</h2>
+        </div>

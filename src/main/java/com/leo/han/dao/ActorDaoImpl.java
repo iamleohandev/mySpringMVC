@@ -58,7 +58,7 @@ public class ActorDaoImpl implements ActorDao {
 		MapSqlParameterSource param = new MapSqlParameterSource();
 		param.addValue("actor_id", id);
 		
-		Actor actor = jdbcTemplate.queryForObject(GET_ACTOR_BY_ID, param, new BeanPropertyRowMapper(Actor.class));
+		Actor actor = (Actor)jdbcTemplate.queryForObject(GET_ACTOR_BY_ID, param, new BeanPropertyRowMapper(Actor.class));
 		
 		
 		return actor;

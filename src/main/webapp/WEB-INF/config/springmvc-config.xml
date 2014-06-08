@@ -12,14 +12,33 @@
 
 
 	<!--***specifying where to find the speicific jsp or view implementation 
-		based on the logic view name***-->
+		based on the logic view name*** -->
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->
+
+	<!-- <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
+		<property name="prefix" value="/WEB-INF/jsps/"></property> <property name="suffix" 
+		value=".jsp"></property> </bean> -->
+
+
+	<!-- Configure the viewResolver as TilesViewResolver to use the apache tiles 
+		to render the views -->
 	<bean id="viewResolver"
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/jsps/"></property>
-		<property name="suffix" value=".jsp"></property>
+		class="org.springframework.web.servlet.view.tiles3.TilesViewResolver">
 	</bean>
+
+	<!-- Configure the tilesConfigurer to read the layout definition xml file  
+		for contruct the page -->
+	<bean class="org.springframework.web.servlet.view.tiles3.TilesConfigurer"
+		id="tilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/layouts/layout.xml</value>
+			</list>
+		</property>
+	</bean>
+
+
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
 		up static resources in the ${webappRoot}/resources directory -->
@@ -62,4 +81,6 @@
 			<property name="paramName" value="language"></property>
 		</bean>
 	</mvc:interceptors>
+
+
 </beans>
