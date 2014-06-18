@@ -13,21 +13,32 @@
 
 	<!--***specifying where to find the speicific jsp or view implementation 
 		based on the logic view name*** -->
+
+	<!-- Multiple view resolver set property order -->
+
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->
 
-	<!-- <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
-		<property name="prefix" value="/WEB-INF/jsps/"></property> <property name="suffix" 
-		value=".jsp"></property> </bean> -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsps/"></property>
+		<property name="suffix" value=".jsp"></property>
+		<property name="order" value="1"></property>
+	</bean>
 
 
 	<!-- Configure the viewResolver as TilesViewResolver to use the apache tiles 
 		to render the views -->
-	<bean id="viewResolver"
+
+
+
+	<bean id="viewTileResolver"
 		class="org.springframework.web.servlet.view.tiles3.TilesViewResolver">
+		<property name="order" value="0"></property>
 	</bean>
 
-	<!-- Configure the tilesConfigurer to read the layout definition xml file  
+
+	<!-- Configure the tilesConfigurer to read the layout definition xml file 
 		for contruct the page -->
 	<bean class="org.springframework.web.servlet.view.tiles3.TilesConfigurer"
 		id="tilesConfigurer">
