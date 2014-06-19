@@ -44,7 +44,7 @@ public class ActorController {
 		return "addactor";
 	}
 	
-	@RequestMapping(value="/addactorresult", method =RequestMethod.POST )
+	@RequestMapping(value="/addactor", method =RequestMethod.POST )
 	public String addActorResult(Model model, Actor actor,  BindingResult bindingResult){
 		
 		actorValidator.validate(actor, bindingResult);

@@ -3,9 +3,9 @@
 
 <div class="body">
 	<h2>Add Actor</h2>
-	<c:url value="/addactorresult" var="form_path" />
 
-	<form:form action="${form_path}" method="post" commandName="actor">
+
+	<form:form action="${addactor_url}" method="post" commandName="actor">
 		<table>
 			<tr>
 				<td>First Name:</td>

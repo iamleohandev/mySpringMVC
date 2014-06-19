@@ -16,8 +16,8 @@
 		<security:user name="han" authorities="APP_VIEWER"
 			password="540071" />
 	</security:user-service>
-	
-	
+
+
 	<security:authentication-manager>
 		<security:authentication-provider
 			user-service-ref="userService">
@@ -33,6 +33,8 @@
 
 	<security:http use-expressions="true" auto-config="false">
 		<security:intercept-url pattern="/login"
+			access="permitAll" />
+		<security:intercept-url pattern="/adduser"
 			access="permitAll" />
 		<security:intercept-url pattern="/"
 			access="isAuthenticated()" />
