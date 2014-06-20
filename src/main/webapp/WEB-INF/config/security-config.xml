@@ -29,15 +29,15 @@
 
 
 
-
-
 	<security:http use-expressions="true" auto-config="false">
 		<security:intercept-url pattern="/login"
 			access="permitAll" />
+		<security:intercept-url pattern="/logout"
+			access="isAuthenticated()" />
 		<security:intercept-url pattern="/adduser"
 			access="permitAll" />
 		<security:intercept-url pattern="/"
-			access="isAuthenticated()" />
+			access="permitAll" />
 		<security:intercept-url pattern="/actors"
 			access="isAuthenticated()" />
 		<security:intercept-url pattern="/addactor"
@@ -49,6 +49,7 @@
 		<security:intercept-url pattern="/**" access="denyAll" />
 		<security:form-login login-page="/login"
 			authentication-failure-url="/login?error=true" />
+		<security:logout logout-success-url="/logout" />
 	</security:http>
 
 </beans>

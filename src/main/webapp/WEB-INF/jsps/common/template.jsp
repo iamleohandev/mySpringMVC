@@ -1,13 +1,10 @@
 <%@include file="include.jsp"%>
 <html>
 <head>
-
 <link rel="stylesheet" type="text/css"
-	href="<c:url value="/resources/css/main.css" />">
+	href="<c:url value='/resources/css/main.css' />">
 <script type="text/javascript"
-	src="<c:out value="/resource/js/jquery.js" />"></script>
-
-
+	src="<c:url value='/resources/js/jquery.js' />"></script>
 
 
 <title><c:set var="titleKey">

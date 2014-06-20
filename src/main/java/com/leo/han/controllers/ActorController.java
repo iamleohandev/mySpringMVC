@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.leo.han.beans.Actor;
 import com.leo.han.service.ActorService;
-import com.leo.han.validator.ActorValidator;
+import com.leo.han.valdiators.ActorValidator;
 
 @Controller
 public class ActorController {
