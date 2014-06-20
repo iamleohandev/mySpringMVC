@@ -30,6 +30,8 @@
 
 
 	<security:http use-expressions="true" auto-config="false">
+			<security:intercept-url pattern="/jquery"
+			access="permitAll" />
 		<security:intercept-url pattern="/login"
 			access="permitAll" />
 		<security:intercept-url pattern="/logout"

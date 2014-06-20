@@ -13,4 +13,10 @@ public class HomeController {
 		return "home";
 	}
 	
+	
+	@RequestMapping(value="/jquery", method = RequestMethod.GET)
+	public String goJquery(){
+		
+		return "jquery";
+	}
 }

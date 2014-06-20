@@ -2,6 +2,6 @@
 
  
         <div class="body">
-            <h2>Home page !</h2>
+            <h2>My HOME</h2>
         </div>
  

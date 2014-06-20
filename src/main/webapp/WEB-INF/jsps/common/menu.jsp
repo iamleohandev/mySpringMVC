@@ -5,9 +5,8 @@
 
 	Menu
 	<ul>
-		<li><spring:message code="languate_test" /> : <a
-			href='${en_locale}'><spring:message code="english" /> </a>| <a
-			href='${zh_CN_locale}'><spring:message code="chinese" /> </a></li>
+		<li><a href='${en_locale}'><spring:message code="english" />
+		</a>| <a href='${zh_CN_locale}'><spring:message code="chinese" /> </a></li>
 
 		<sec:authorize access="isAuthenticated()">
 			<li><a href='${actors_url}'><spring:message
@@ -22,6 +21,10 @@
 			<li><a href='${login_url}'><spring:message
 						code="title.login" /></a></li>
 		</sec:authorize>
+
+		<li><a href='${jquery_url}'><spring:message
+					code="title.jquery" /></a></li>
+
 	</ul>
 </div>
 

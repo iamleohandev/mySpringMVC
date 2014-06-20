@@ -3,6 +3,10 @@
 <head>
 <link rel="stylesheet" type="text/css"
 	href="<c:url value='/resources/css/main.css' />">
+
+<link rel="stylesheet" type="text/css"
+	href="<c:url value='/resources/css/expand.css' />">
+
 <script type="text/javascript"
 	src="<c:url value='/resources/js/jquery.js' />"></script>
 

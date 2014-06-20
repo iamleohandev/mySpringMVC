@@ -56,4 +56,9 @@
 		<put-attribute name="body" value="/WEB-INF/jsps/errors.jsp" />
 	</definition>
 	
+	<definition name="jquery" extends="baseLayout">
+		<put-attribute name="title" value="title.jquery" />
+		<put-attribute name="body" value="/WEB-INF/jsps/jquery.jsp" />
+	</definition>
+	
 </tiles-definitions>

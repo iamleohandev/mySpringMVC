@@ -23,3 +23,5 @@
 
 
 <c:url value="/adduser" var="adduser_url" />
+
+<c:url value="/jquery" var="jquery_url" />
