@@ -27,6 +27,14 @@ public class LoginController {
 	}
 	
 	
+	@RequestMapping(value="/logout", method=RequestMethod.GET)
+	public String showLogout(){
+		
+		return "home";
+	}
+	
+	
+	
 	@RequestMapping(value="/adduser", method=RequestMethod.GET)
 	public String addUserGet(Model model){
 		model.addAttribute("user", new User());

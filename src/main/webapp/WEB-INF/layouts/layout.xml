@@ -12,26 +12,48 @@
 
 
 	<definition name="home" extends="baseLayout">
-		<put-attribute name="title" value="home_title" />
-				<put-attribute name="body" value="/WEB-INF/jsps/home.jsp" />
+		<put-attribute name="title" value="title.home" />
+		<put-attribute name="body" value="/WEB-INF/jsps/home.jsp" />
 	</definition>
 
 	<definition name="actors" extends="baseLayout">
-		<put-attribute name="title" value="actors_title" />
+		<put-attribute name="title" value="title.actors" />
 		<put-attribute name="body" value="/WEB-INF/jsps/actors.jsp" />
 	</definition>
 
 
 	<definition name="addactor" extends="baseLayout">
-		<put-attribute name="title" value="add_actor_title" />
+		<put-attribute name="title" value="title.addactor" />
 		<put-attribute name="body" value="/WEB-INF/jsps/addactor.jsp" />
 	</definition>
 
 
 	<definition name="addactorresult" extends="baseLayout">
-		<put-attribute name="title" value="add_actor_result" />
+		<put-attribute name="title" value="title.addactorresult" />
 		<put-attribute name="body" value="/WEB-INF/jsps/addactorresult.jsp" />
 	</definition>
 
 
+	<definition name="login" extends="baseLayout">
+		<put-attribute name="title" value="title.login" />
+		<put-attribute name="body" value="/WEB-INF/jsps/login.jsp" />
+	</definition>
+
+	<definition name="adduser" extends="baseLayout">
+		<put-attribute name="title" value="title.adduser" />
+		<put-attribute name="body" value="/WEB-INF/jsps/adduser.jsp" />
+	</definition>
+
+
+	<definition name="useradded" extends="baseLayout">
+		<put-attribute name="title" value="title.useradded" />
+		<put-attribute name="body" value="/WEB-INF/jsps/useradded.jsp" />
+	</definition>
+
+
+	<definition name="errors" extends="baseLayout">
+		<put-attribute name="title" value="title.errors" />
+		<put-attribute name="body" value="/WEB-INF/jsps/errors.jsp" />
+	</definition>
+	
 </tiles-definitions>
