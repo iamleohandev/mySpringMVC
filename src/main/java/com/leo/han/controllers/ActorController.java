@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.leo.han.beans.Actor;
 import com.leo.han.service.ActorService;
-import com.leo.han.validator.ActorValidator;
+import com.leo.han.valdiators.ActorValidator;
 
 @Controller
 public class ActorController {
@@ -44,7 +44,7 @@ public class ActorController {
 		return "addactor";
 	}
 	
-	@RequestMapping(value="/addactorresult", method =RequestMethod.POST )
+	@RequestMapping(value="/addactor", method =RequestMethod.POST )
 	public String addActorResult(Model model, Actor actor,  BindingResult bindingResult){
 		
 		actorValidator.validate(actor, bindingResult);

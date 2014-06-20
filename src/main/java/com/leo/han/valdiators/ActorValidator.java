@@ -1,4 +1,4 @@
-package com.leo.han.validator;
+package com.leo.han.valdiators;
 
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;

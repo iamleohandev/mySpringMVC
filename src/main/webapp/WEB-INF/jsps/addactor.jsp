@@ -1,23 +1,21 @@
-<%@include file="include.jsp"%>
+<%@include file="common/include.jsp"%>
 
-<title>Add Actor</title>
-</head>
-<body>
 
+<div class="body">
 	<h2>Add Actor</h2>
-	<c:url value="/addactorresult" var="form_path"/>
-	
-	<form:form action="${form_path}" method="post" commandName="actor">
+
+
+	<form:form action="${addactor_url}" method="post" commandName="actor">
 		<table>
 			<tr>
 				<td>First Name:</td>
 				<td><form:input path="first_name" name="first_name" type="text" /></td>
-				<td><form:errors  path="first_name"/></td>
+				<td><form:errors path="first_name" /></td>
 			</tr>
 			<tr>
 				<td>Last Name:</td>
-				<td><form:input path="last_name"  name="last_name" type="text" /></td>
-				<td><form:errors  path="last_name"/></td>
+				<td><form:input path="last_name" name="last_name" type="text" /></td>
+				<td><form:errors path="last_name" /></td>
 			</tr>
 			<tr>
 				<td></td>
@@ -25,6 +23,4 @@
 			</tr>
 		</table>
 	</form:form>
-
-</body>
-</html>
+</div>
