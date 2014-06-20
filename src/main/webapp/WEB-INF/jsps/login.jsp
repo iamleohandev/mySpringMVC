@@ -15,7 +15,7 @@
 					value=''></td>
 			</tr>
 			<tr>
-				<td>Password :</td>
+				<td> Password :</td>
 				<td><input type='password' name='j_password' /></td>
 			</tr>
 			<tr>
